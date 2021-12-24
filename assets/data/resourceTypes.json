@@ -1,0 +1,1660 @@
+[
+    {
+        "resourceType": "core/wcm/components/accordion/v1/accordion",
+        "properties": {
+            "expandedItems": {
+                "name": "expandedItems",
+                "description": "Array of expanded items.",
+                "requiredType": "String",
+                "multiple": true
+            },
+            "headingElement": {
+                "name": "headingElement",
+                "description": "Name of the configuration policy property that stores the default value for the accordion heading's HTML element.",
+                "requiredType": "String",
+                "valueConstraints": [
+                    "h1",
+                    "h2",
+                    "h3",
+                    "h4",
+                    "h5",
+                    "h6"
+                ]
+            },
+            "singleExpansion": {
+                "name": "singleExpansion",
+                "description": "Flag indicating if single expansion is enabled.",
+                "requiredType": "Boolean"
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/breadcrumb/v1/breadcrumb",
+        "properties": {
+            "hideCurrent": {
+                "name": "hideCurrent",
+                "description": "Indicate if the current page should not be present in the collection returned by\n{@link #getItems()}.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "showHidden": {
+                "name": "showHidden",
+                "description": "Indicate if pages that are hidden for navigation will still be displayed.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "startLevel": {
+                "name": "startLevel",
+                "description": "Indicate from which level starting from the current page the items from the collection\nreturned by {@link #getItems()} will be accumulated.",
+                "requiredType": "Integer",
+                "defaultValues": 2
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/breadcrumb/v2/breadcrumb",
+        "properties": {
+            "hideCurrent": {
+                "name": "hideCurrent",
+                "description": "Indicate if the current page should not be present in the collection returned by\n{@link #getItems()}.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "showHidden": {
+                "name": "showHidden",
+                "description": "Indicate if pages that are hidden for navigation will still be displayed.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "startLevel": {
+                "name": "startLevel",
+                "description": "Indicate from which level starting from the current page the items from the collection\nreturned by {@link #getItems()} will be accumulated.",
+                "requiredType": "Integer",
+                "defaultValues": 2
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/breadcrumb/v3/breadcrumb",
+        "properties": {
+            "hideCurrent": {
+                "name": "hideCurrent",
+                "description": "Indicate if the current page should not be present in the collection returned by\n{@link #getItems()}.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "showHidden": {
+                "name": "showHidden",
+                "description": "Indicate if pages that are hidden for navigation will still be displayed.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "startLevel": {
+                "name": "startLevel",
+                "description": "Indicate from which level starting from the current page the items from the collection\nreturned by {@link #getItems()} will be accumulated.",
+                "requiredType": "Integer",
+                "defaultValues": 2
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/button/v1/button",
+        "properties": {
+            "accessibilityLabel": {
+                "name": "accessibilityLabel",
+                "requiredType": "String"
+            },
+            "icon": {
+                "name": "icon",
+                "requiredType": "String"
+            },
+            "jcr:title": {
+                "name": "jcr:title",
+                "requiredType": "String"
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/button/v2/button",
+        "properties": {
+            "accessibilityLabel": {
+                "name": "accessibilityLabel",
+                "requiredType": "String"
+            },
+            "icon": {
+                "name": "icon",
+                "requiredType": "String"
+            },
+            "jcr:title": {
+                "name": "jcr:title",
+                "requiredType": "String"
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/carousel/v1/carousel",
+        "properties": {
+            "accessibilityLabel": {
+                "name": "accessibilityLabel",
+                "description": "The accessibility label.",
+                "requiredType": "String"
+            },
+            "autopauseDisabled": {
+                "name": "autopauseDisabled",
+                "description": "Indicates whether automatic pause on hovering the carousel is disabled, or not.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "autoplay": {
+                "name": "autoplay",
+                "description": "Indicates whether to automatically transition between slides, or not.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "controlsPrepended": {
+                "name": "controlsPrepended",
+                "description": "Whether the control elements should be placed in front of the carousel items.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "delay": {
+                "name": "delay",
+                "description": "Indicates the delay (in milliseconds) when automatically transitioning between slides.",
+                "requiredType": "Long",
+                "defaultValues": 5000
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/container/v1/container",
+        "properties": {
+            "accessibilityLabel": {
+                "name": "accessibilityLabel",
+                "description": "The accessibility label.",
+                "requiredType": "String"
+            },
+            "layout": {
+                "name": "layout",
+                "description": "Enumeration of supported layout types for the container component",
+                "requiredType": "String",
+                "valueConstraints": [
+                    "simple",
+                    "responsiveGrid"
+                ],
+                "defaultValues": "simple"
+            },
+            "roleAttribute": {
+                "name": "roleAttribute",
+                "description": "The role attribute.",
+                "requiredType": "String"
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/contentfragment/v1/contentfragment",
+        "properties": {
+            "displayMode": {
+                "name": "displayMode",
+                "requiredType": "String"
+            },
+            "elementNames": {
+                "name": "elementNames",
+                "requiredType": "String",
+                "multiple": true
+            },
+            "fragmentPath": {
+                "name": "fragmentPath",
+                "requiredType": "String"
+            },
+            "variationName": {
+                "name": "variationName",
+                "requiredType": "String"
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/contentfragmentlist/v1/contentfragmentlist",
+        "properties": {
+            "elementNames": {
+                "name": "elementNames",
+                "requiredType": "String",
+                "multiple": true
+            },
+            "maxItems": {
+                "name": "maxItems",
+                "requiredType": "Integer",
+                "defaultValues": -1
+            },
+            "modelPath": {
+                "name": "modelPath",
+                "requiredType": "String"
+            },
+            "orderBy": {
+                "name": "orderBy",
+                "requiredType": "String",
+                "defaultValues": "jcr:created"
+            },
+            "parentPath": {
+                "name": "parentPath",
+                "requiredType": "String"
+            },
+            "sortOrder": {
+                "name": "sortOrder",
+                "requiredType": "String",
+                "defaultValues": "asc"
+            },
+            "tagNames": {
+                "name": "tagNames",
+                "requiredType": "String",
+                "multiple": true
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/contentfragmentlist/v2/contentfragmentlist",
+        "properties": {
+            "elementNames": {
+                "name": "elementNames",
+                "requiredType": "String",
+                "multiple": true
+            },
+            "maxItems": {
+                "name": "maxItems",
+                "requiredType": "Integer",
+                "defaultValues": -1
+            },
+            "modelPath": {
+                "name": "modelPath",
+                "requiredType": "String"
+            },
+            "orderBy": {
+                "name": "orderBy",
+                "requiredType": "String",
+                "defaultValues": "jcr:created"
+            },
+            "parentPath": {
+                "name": "parentPath",
+                "requiredType": "String"
+            },
+            "sortOrder": {
+                "name": "sortOrder",
+                "requiredType": "String",
+                "defaultValues": "asc"
+            },
+            "tagNames": {
+                "name": "tagNames",
+                "requiredType": "String",
+                "multiple": true
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/download/v1/download",
+        "properties": {
+            "actionText": {
+                "name": "actionText",
+                "requiredType": "String"
+            },
+            "descriptionFromAsset": {
+                "name": "descriptionFromAsset",
+                "description": "Whether or not the description value is taken from the configured asset.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "displayFilename": {
+                "name": "displayFilename",
+                "description": "Whether the filename will be displayed.",
+                "requiredType": "Boolean",
+                "defaultValues": true
+            },
+            "displayFormat": {
+                "name": "displayFormat",
+                "description": "Whether the file's format will be displayed.",
+                "requiredType": "Boolean",
+                "defaultValues": true
+            },
+            "displaySize": {
+                "name": "displaySize",
+                "description": "Whether the file's size will be displayed.",
+                "requiredType": "Boolean",
+                "defaultValues": true
+            },
+            "fileName": {
+                "name": "fileName",
+                "requiredType": "String"
+            },
+            "hideTitleLink": {
+                "name": "hideTitleLink",
+                "description": "Whether the title links should be hidden.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "inline": {
+                "name": "inline",
+                "description": "Whether or not the download item should be displayed inline vs. attachment.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "jcr:description": {
+                "name": "jcr:description",
+                "requiredType": "String"
+            },
+            "jcr:mimeType": {
+                "name": "jcr:mimeType",
+                "requiredType": "String"
+            },
+            "jcr:title": {
+                "name": "jcr:title",
+                "requiredType": "String"
+            },
+            "titleFromAsset": {
+                "name": "titleFromAsset",
+                "description": "Whether or not the title value is taken from the configured asset.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "titleType": {
+                "name": "titleType",
+                "description": "The value for this title's HTML element type.",
+                "requiredType": "String"
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/download/v2/download",
+        "properties": {
+            "actionText": {
+                "name": "actionText",
+                "requiredType": "String"
+            },
+            "descriptionFromAsset": {
+                "name": "descriptionFromAsset",
+                "description": "Whether or not the description value is taken from the configured asset.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "displayFilename": {
+                "name": "displayFilename",
+                "description": "Whether the filename will be displayed.",
+                "requiredType": "Boolean",
+                "defaultValues": true
+            },
+            "displayFormat": {
+                "name": "displayFormat",
+                "description": "Whether the file's format will be displayed.",
+                "requiredType": "Boolean",
+                "defaultValues": true
+            },
+            "displaySize": {
+                "name": "displaySize",
+                "description": "Whether the file's size will be displayed.",
+                "requiredType": "Boolean",
+                "defaultValues": true
+            },
+            "fileName": {
+                "name": "fileName",
+                "requiredType": "String"
+            },
+            "hideTitleLink": {
+                "name": "hideTitleLink",
+                "description": "Whether the title links should be hidden.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "inline": {
+                "name": "inline",
+                "description": "Whether or not the download item should be displayed inline vs. attachment.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "jcr:description": {
+                "name": "jcr:description",
+                "requiredType": "String"
+            },
+            "jcr:mimeType": {
+                "name": "jcr:mimeType",
+                "requiredType": "String"
+            },
+            "jcr:title": {
+                "name": "jcr:title",
+                "requiredType": "String"
+            },
+            "titleFromAsset": {
+                "name": "titleFromAsset",
+                "description": "Whether or not the title value is taken from the configured asset.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "titleType": {
+                "name": "titleType",
+                "description": "The value for this title's HTML element type.",
+                "requiredType": "String"
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/embed/v1/embed",
+        "properties": {
+            "embeddableResourceType": {
+                "name": "embeddableResourceType",
+                "requiredType": "String"
+            },
+            "html": {
+                "name": "html",
+                "requiredType": "String"
+            },
+            "type": {
+                "name": "type",
+                "requiredType": "String"
+            },
+            "url": {
+                "name": "url",
+                "requiredType": "String"
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/embed/v2/embed",
+        "properties": {
+            "embeddableResourceType": {
+                "name": "embeddableResourceType",
+                "requiredType": "String"
+            },
+            "html": {
+                "name": "html",
+                "requiredType": "String"
+            },
+            "type": {
+                "name": "type",
+                "requiredType": "String"
+            },
+            "url": {
+                "name": "url",
+                "requiredType": "String"
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/experiencefragment/v1/experiencefragment",
+        "properties": {
+            "cq:cssClass": {
+                "name": "cq:cssClass",
+                "description": "Class names of the responsive grid.",
+                "requiredType": "String"
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/experiencefragment/v2/experiencefragment",
+        "properties": {
+            "cq:cssClass": {
+                "name": "cq:cssClass",
+                "description": "Class names of the responsive grid.",
+                "requiredType": "String"
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/form/button/v1/button",
+        "properties": {
+            "id": {
+                "name": "id",
+                "requiredType": "String"
+            },
+            "jcr:title": {
+                "name": "jcr:title",
+                "requiredType": "String"
+            },
+            "name": {
+                "name": "name",
+                "requiredType": "String"
+            },
+            "type": {
+                "name": "type",
+                "requiredType": "String",
+                "defaultValues": "submit"
+            },
+            "value": {
+                "name": "value",
+                "requiredType": "String"
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/form/button/v2/button",
+        "properties": {
+            "id": {
+                "name": "id",
+                "requiredType": "String"
+            },
+            "jcr:title": {
+                "name": "jcr:title",
+                "requiredType": "String"
+            },
+            "name": {
+                "name": "name",
+                "requiredType": "String"
+            },
+            "type": {
+                "name": "type",
+                "requiredType": "String",
+                "defaultValues": "submit"
+            },
+            "value": {
+                "name": "value",
+                "requiredType": "String"
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/form/container/v1/container",
+        "properties": {
+            "actionType": {
+                "name": "actionType",
+                "requiredType": "String"
+            },
+            "enctype": {
+                "name": "enctype",
+                "requiredType": "String",
+                "defaultValues": "multipart/form-data"
+            },
+            "id": {
+                "name": "id",
+                "requiredType": "String"
+            },
+            "method": {
+                "name": "method",
+                "requiredType": "String",
+                "defaultValues": "POST"
+            },
+            "redirect": {
+                "name": "redirect",
+                "requiredType": "String"
+            },
+            "sling:resourceType": {
+                "name": "sling:resourceType",
+                "requiredType": "String"
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/form/container/v2/container",
+        "properties": {
+            "actionType": {
+                "name": "actionType",
+                "requiredType": "String"
+            },
+            "enctype": {
+                "name": "enctype",
+                "requiredType": "String",
+                "defaultValues": "multipart/form-data"
+            },
+            "id": {
+                "name": "id",
+                "requiredType": "String"
+            },
+            "method": {
+                "name": "method",
+                "requiredType": "String",
+                "defaultValues": "POST"
+            },
+            "redirect": {
+                "name": "redirect",
+                "requiredType": "String"
+            },
+            "sling:resourceType": {
+                "name": "sling:resourceType",
+                "requiredType": "String"
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/form/hidden/v1/hidden",
+        "properties": {
+            "id": {
+                "name": "id",
+                "requiredType": "String"
+            },
+            "jcr:title": {
+                "name": "jcr:title",
+                "requiredType": "String"
+            },
+            "name": {
+                "name": "name",
+                "requiredType": "String"
+            },
+            "value": {
+                "name": "value",
+                "requiredType": "String"
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/form/hidden/v2/hidden",
+        "properties": {
+            "id": {
+                "name": "id",
+                "requiredType": "String"
+            },
+            "jcr:title": {
+                "name": "jcr:title",
+                "requiredType": "String"
+            },
+            "name": {
+                "name": "name",
+                "requiredType": "String"
+            },
+            "value": {
+                "name": "value",
+                "requiredType": "String"
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/form/options/v1/options",
+        "properties": {
+            "datasourceRT": {
+                "name": "datasourceRT",
+                "requiredType": "String"
+            },
+            "helpMessage": {
+                "name": "helpMessage",
+                "requiredType": "String"
+            },
+            "id": {
+                "name": "id",
+                "requiredType": "String"
+            },
+            "jcr:title": {
+                "name": "jcr:title",
+                "requiredType": "String"
+            },
+            "listPath": {
+                "name": "listPath",
+                "requiredType": "String"
+            },
+            "name": {
+                "name": "name",
+                "requiredType": "String"
+            },
+            "source": {
+                "name": "source",
+                "requiredType": "String"
+            },
+            "type": {
+                "name": "type",
+                "requiredType": "String"
+            },
+            "value": {
+                "name": "value",
+                "requiredType": "String"
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/form/options/v2/options",
+        "properties": {
+            "datasourceRT": {
+                "name": "datasourceRT",
+                "requiredType": "String"
+            },
+            "helpMessage": {
+                "name": "helpMessage",
+                "requiredType": "String"
+            },
+            "id": {
+                "name": "id",
+                "requiredType": "String"
+            },
+            "jcr:title": {
+                "name": "jcr:title",
+                "requiredType": "String"
+            },
+            "listPath": {
+                "name": "listPath",
+                "requiredType": "String"
+            },
+            "name": {
+                "name": "name",
+                "requiredType": "String"
+            },
+            "source": {
+                "name": "source",
+                "requiredType": "String"
+            },
+            "type": {
+                "name": "type",
+                "requiredType": "String"
+            },
+            "value": {
+                "name": "value",
+                "requiredType": "String"
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/form/text/v1/text",
+        "properties": {
+            "constraintMessage": {
+                "name": "constraintMessage",
+                "requiredType": "String"
+            },
+            "helpMessage": {
+                "name": "helpMessage",
+                "requiredType": "String"
+            },
+            "hideTitle": {
+                "name": "hideTitle",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "id": {
+                "name": "id",
+                "requiredType": "String"
+            },
+            "jcr:title": {
+                "name": "jcr:title",
+                "requiredType": "String"
+            },
+            "name": {
+                "name": "name",
+                "requiredType": "String"
+            },
+            "readOnly": {
+                "name": "readOnly",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "required": {
+                "name": "required",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "requiredMessage": {
+                "name": "requiredMessage",
+                "requiredType": "String"
+            },
+            "rows": {
+                "name": "rows",
+                "requiredType": "Integer",
+                "defaultValues": 2
+            },
+            "type": {
+                "name": "type",
+                "requiredType": "String",
+                "defaultValues": "text"
+            },
+            "usePlaceholder": {
+                "name": "usePlaceholder",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "value": {
+                "name": "value",
+                "requiredType": "String"
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/form/text/v2/text",
+        "properties": {
+            "constraintMessage": {
+                "name": "constraintMessage",
+                "requiredType": "String"
+            },
+            "helpMessage": {
+                "name": "helpMessage",
+                "requiredType": "String"
+            },
+            "hideTitle": {
+                "name": "hideTitle",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "id": {
+                "name": "id",
+                "requiredType": "String"
+            },
+            "jcr:title": {
+                "name": "jcr:title",
+                "requiredType": "String"
+            },
+            "name": {
+                "name": "name",
+                "requiredType": "String"
+            },
+            "readOnly": {
+                "name": "readOnly",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "required": {
+                "name": "required",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "requiredMessage": {
+                "name": "requiredMessage",
+                "requiredType": "String"
+            },
+            "rows": {
+                "name": "rows",
+                "requiredType": "Integer",
+                "defaultValues": 2
+            },
+            "type": {
+                "name": "type",
+                "requiredType": "String",
+                "defaultValues": "text"
+            },
+            "usePlaceholder": {
+                "name": "usePlaceholder",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "value": {
+                "name": "value",
+                "requiredType": "String"
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/image/v1/image",
+        "properties": {
+            "alt": {
+                "name": "alt",
+                "requiredType": "String"
+            },
+            "disableLazyLoading": {
+                "name": "disableLazyLoading",
+                "description": "Name of the configuration policy property that will indicate if lazy loading should be disabled.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "displayPopupTitle": {
+                "name": "displayPopupTitle",
+                "description": "Indicate if the image's caption will be rendered as a popup.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "fileReference": {
+                "name": "fileReference",
+                "requiredType": "String"
+            },
+            "isDecorative": {
+                "name": "isDecorative",
+                "description": "Indicate if the image is decorative.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "jcr:mimeType": {
+                "name": "jcr:mimeType",
+                "requiredType": "String",
+                "defaultValues": "image/jpeg"
+            },
+            "jcr:title": {
+                "name": "jcr:title",
+                "requiredType": "String"
+            },
+            "jpegQuality": {
+                "name": "jpegQuality",
+                "description": "Name of the configuration policy property that will store the image quality for an image.",
+                "requiredType": "Integer",
+                "defaultValues": 82
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/image/v2/image",
+        "properties": {
+            "alt": {
+                "name": "alt",
+                "requiredType": "String"
+            },
+            "disableLazyLoading": {
+                "name": "disableLazyLoading",
+                "description": "Name of the configuration policy property that will indicate if lazy loading should be disabled.",
+                "requiredType": "Boolean",
+                "defaultValues": true
+            },
+            "displayPopupTitle": {
+                "name": "displayPopupTitle",
+                "description": "Indicate if the image's caption will be rendered as a popup.",
+                "requiredType": "Boolean",
+                "defaultValues": true
+            },
+            "fileReference": {
+                "name": "fileReference",
+                "requiredType": "String"
+            },
+            "imageModifiers": {
+                "name": "imageModifiers",
+                "requiredType": "String"
+            },
+            "imagePreset": {
+                "name": "imagePreset",
+                "requiredType": "String"
+            },
+            "isDecorative": {
+                "name": "isDecorative",
+                "description": "Indicate if the image is decorative.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "jcr:mimeType": {
+                "name": "jcr:mimeType",
+                "requiredType": "String",
+                "defaultValues": "image/jpeg"
+            },
+            "jcr:title": {
+                "name": "jcr:title",
+                "requiredType": "String"
+            },
+            "jpegQuality": {
+                "name": "jpegQuality",
+                "description": "Name of the configuration policy property that will store the image quality for an image.",
+                "requiredType": "Integer",
+                "defaultValues": 82
+            },
+            "lazyThreshold": {
+                "name": "lazyThreshold",
+                "description": "Name of the configuration policy property that indicate the number of pixels, in advance of becoming visible,\nthat a lazy loading image should load.",
+                "requiredType": "Integer",
+                "defaultValues": 0
+            },
+            "smartCropRendition": {
+                "name": "smartCropRendition",
+                "requiredType": "String"
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/image/v3/image",
+        "properties": {
+            "alt": {
+                "name": "alt",
+                "requiredType": "String"
+            },
+            "disableLazyLoading": {
+                "name": "disableLazyLoading",
+                "description": "Name of the configuration policy property that will indicate if lazy loading should be disabled.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "displayPopupTitle": {
+                "name": "displayPopupTitle",
+                "description": "Indicate if the image's caption will be rendered as a popup.",
+                "requiredType": "Boolean",
+                "defaultValues": true
+            },
+            "fileReference": {
+                "name": "fileReference",
+                "requiredType": "String"
+            },
+            "imageModifiers": {
+                "name": "imageModifiers",
+                "requiredType": "String"
+            },
+            "imagePreset": {
+                "name": "imagePreset",
+                "requiredType": "String"
+            },
+            "isDecorative": {
+                "name": "isDecorative",
+                "description": "Indicate if the image is decorative.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "jcr:mimeType": {
+                "name": "jcr:mimeType",
+                "requiredType": "String",
+                "defaultValues": "image/jpeg"
+            },
+            "jcr:title": {
+                "name": "jcr:title",
+                "requiredType": "String"
+            },
+            "jpegQuality": {
+                "name": "jpegQuality",
+                "description": "Name of the configuration policy property that will store the image quality for an image.",
+                "requiredType": "Integer",
+                "defaultValues": 82
+            },
+            "lazyThreshold": {
+                "name": "lazyThreshold",
+                "description": "Name of the configuration policy property that indicate the number of pixels, in advance of becoming visible,\nthat a lazy loading image should load.",
+                "requiredType": "Integer",
+                "defaultValues": 0
+            },
+            "smartCropRendition": {
+                "name": "smartCropRendition",
+                "requiredType": "String"
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/languagenavigation/v1/languagenavigation",
+        "properties": {
+            "accessibilityLabel": {
+                "name": "accessibilityLabel",
+                "requiredType": "String"
+            },
+            "navigationRoot": {
+                "name": "navigationRoot",
+                "description": "Name of the resource / configuration policy property that defines the navigation root from which to build the global\nlanguage structure navigation. The property should provide a String value.",
+                "requiredType": "String"
+            },
+            "structureDepth": {
+                "name": "structureDepth",
+                "description": "Name of the resource / configuration policy property that defines the depth of the global language structure in the content tree\nrelative to the site root. The property should provide a Long value.",
+                "requiredType": "Integer",
+                "defaultValues": 1
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/languagenavigation/v2/languagenavigation",
+        "properties": {
+            "accessibilityLabel": {
+                "name": "accessibilityLabel",
+                "requiredType": "String"
+            },
+            "navigationRoot": {
+                "name": "navigationRoot",
+                "description": "Name of the resource / configuration policy property that defines the navigation root from which to build the global\nlanguage structure navigation. The property should provide a String value.",
+                "requiredType": "String"
+            },
+            "structureDepth": {
+                "name": "structureDepth",
+                "description": "Name of the resource / configuration policy property that defines the depth of the global language structure in the content tree\nrelative to the site root. The property should provide a Long value.",
+                "requiredType": "Integer",
+                "defaultValues": 1
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/list/v1/list",
+        "properties": {
+            "dateFormat": {
+                "name": "dateFormat",
+                "description": "Indicating which date format should be used when the list items render their modification date.",
+                "requiredType": "String",
+                "defaultValues": "yyyy-MM-dd"
+            },
+            "linkItems": {
+                "name": "linkItems",
+                "description": "Indication if the items should render a link to the page they represent.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "showDescription": {
+                "name": "showDescription",
+                "description": "Indicating if the list items should render a description.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "showModificationDate": {
+                "name": "showModificationDate",
+                "description": "Indicating if the list items should render the modification date of each item.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/list/v2/list",
+        "properties": {
+            "dateFormat": {
+                "name": "dateFormat",
+                "description": "Indicating which date format should be used when the list items render their modification date.",
+                "requiredType": "String",
+                "defaultValues": "yyyy-MM-dd"
+            },
+            "linkItems": {
+                "name": "linkItems",
+                "description": "Indication if the items should render a link to the page they represent.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "showDescription": {
+                "name": "showDescription",
+                "description": "Indicating if the list items should render a description.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "showModificationDate": {
+                "name": "showModificationDate",
+                "description": "Indicating if the list items should render the modification date of each item.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/list/v3/list",
+        "properties": {
+            "dateFormat": {
+                "name": "dateFormat",
+                "description": "Indicating which date format should be used when the list items render their modification date.",
+                "requiredType": "String",
+                "defaultValues": "yyyy-MM-dd"
+            },
+            "displayItemAsTeaser": {
+                "name": "displayItemAsTeaser",
+                "description": "Indication if the items should render a link to the page they represent.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "linkItems": {
+                "name": "linkItems",
+                "description": "Indication if the items should render a link to the page they represent.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "showDescription": {
+                "name": "showDescription",
+                "description": "Indicating if the list items should render a description.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "showModificationDate": {
+                "name": "showModificationDate",
+                "description": "Indicating if the list items should render the modification date of each item.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/navigation/v1/navigation",
+        "properties": {
+            "accessibilityLabel": {
+                "name": "accessibilityLabel",
+                "description": "Name of the resource / configuration policy property that defines the accessibility label.",
+                "requiredType": "String"
+            },
+            "structureStart": {
+                "name": "structureStart",
+                "description": "Name of the resource / configuration policy property that defines the start level of navigation, relative to the\n{@link #PN_NAVIGATION_ROOT}, from which to start building the tree. The property should provide a Long value.",
+                "requiredType": "Integer",
+                "defaultValues": 1
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/navigation/v2/navigation",
+        "properties": {
+            "accessibilityLabel": {
+                "name": "accessibilityLabel",
+                "description": "Name of the resource / configuration policy property that defines the accessibility label.",
+                "requiredType": "String"
+            },
+            "structureStart": {
+                "name": "structureStart",
+                "description": "Name of the resource / configuration policy property that defines the start level of navigation, relative to the\n{@link #PN_NAVIGATION_ROOT}, from which to start building the tree. The property should provide a Long value.",
+                "requiredType": "Integer",
+                "defaultValues": 1
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/page/v1/page",
+        "properties": {
+            "sling:resourceType": {
+                "name": "sling:resourceType",
+                "requiredType": "String"
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/page/v2/page",
+        "properties": {
+            "appResourcesClientlib": {
+                "name": "appResourcesClientlib",
+                "description": "Name of the configuration policy property that will store the category of the client library from which web application resources\nwill be served.",
+                "requiredType": "String",
+                "defaultValues": null
+            },
+            "clientlibsJsHead": {
+                "name": "clientlibsJsHead",
+                "description": "Head JS client library style property name.",
+                "requiredType": "String",
+                "multiple": true
+            },
+            "cq:redirectTarget": {
+                "name": "cq:redirectTarget",
+                "description": "The redirect target if set, null if not.",
+                "requiredType": "String"
+            },
+            "sling:resourceType": {
+                "name": "sling:resourceType",
+                "requiredType": "String"
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/page/v3/page",
+        "properties": {
+            "appResourcesClientlib": {
+                "name": "appResourcesClientlib",
+                "description": "Name of the configuration policy property that will store the category of the client library from which web application resources\nwill be served.",
+                "requiredType": "String",
+                "defaultValues": null
+            },
+            "clientlibsJsHead": {
+                "name": "clientlibsJsHead",
+                "description": "Head JS client library style property name.",
+                "requiredType": "String",
+                "multiple": true
+            },
+            "cq:redirectTarget": {
+                "name": "cq:redirectTarget",
+                "description": "The redirect target if set, null if not.",
+                "requiredType": "String"
+            },
+            "sling:resourceType": {
+                "name": "sling:resourceType",
+                "requiredType": "String"
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/pdfviewer/v1/pdfviewer",
+        "properties": {
+            "borderless": {
+                "name": "borderless",
+                "requiredType": "Boolean"
+            },
+            "defaultViewMode": {
+                "name": "defaultViewMode",
+                "requiredType": "String"
+            },
+            "dockPageControls": {
+                "name": "dockPageControls",
+                "requiredType": "Boolean"
+            },
+            "documentPath": {
+                "name": "documentPath",
+                "requiredType": "String"
+            },
+            "showAnnotationTools": {
+                "name": "showAnnotationTools",
+                "requiredType": "Boolean"
+            },
+            "showDownloadPdf": {
+                "name": "showDownloadPdf",
+                "requiredType": "Boolean"
+            },
+            "showFullScreen": {
+                "name": "showFullScreen",
+                "requiredType": "Boolean"
+            },
+            "showLeftHandPanel": {
+                "name": "showLeftHandPanel",
+                "requiredType": "Boolean"
+            },
+            "showPageControls": {
+                "name": "showPageControls",
+                "requiredType": "Boolean"
+            },
+            "showPrintPdf": {
+                "name": "showPrintPdf",
+                "requiredType": "Boolean"
+            },
+            "type": {
+                "name": "type",
+                "requiredType": "String"
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/progressbar/v1/progressbar",
+        "properties": {
+            "completed": {
+                "name": "completed",
+                "requiredType": "Float",
+                "defaultValues": 0
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/search/v1/search",
+        "properties": {
+            "resultsSize": {
+                "name": "resultsSize",
+                "description": "Name of the configuration policy property that defines the maximal number of results fetched by a search request.",
+                "requiredType": "Integer",
+                "defaultValues": 10
+            },
+            "searchRoot": {
+                "name": "searchRoot",
+                "description": "Name of the resource / configuration policy property that defines the site's search root from which to search.\nThe property should provide a String value.",
+                "requiredType": "String"
+            },
+            "searchTermMinimumLength": {
+                "name": "searchTermMinimumLength",
+                "description": "Name of the configuration policy property that defines the minimum length of the search term to start the search.",
+                "requiredType": "Integer",
+                "defaultValues": 3
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/separator/v1/separator",
+        "properties": {}
+    },
+    {
+        "resourceType": "core/wcm/components/sharing/v1/sharing",
+        "properties": {
+            "facebookAppId": {
+                "name": "facebookAppId",
+                "description": "The Facebook App ID.",
+                "requiredType": "String"
+            },
+            "variantPath": {
+                "name": "variantPath",
+                "description": "Indicate which page variant has been used for social sharing.",
+                "requiredType": "String"
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/tabs/v1/tabs",
+        "properties": {
+            "accessibilityLabel": {
+                "name": "accessibilityLabel",
+                "description": "The accessibility label.",
+                "requiredType": "String"
+            },
+            "activeItem": {
+                "name": "activeItem",
+                "description": "The current active tab.",
+                "requiredType": "String"
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/teaser/v1/teaser",
+        "properties": {
+            "actionsEnabled": {
+                "name": "actionsEnabled",
+                "description": "Whether or not the teaser has Call-to-Action elements",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "descriptionFromPage": {
+                "name": "descriptionFromPage",
+                "description": "Whether or not the description value is taken from the linked page.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "descriptionHidden": {
+                "name": "descriptionHidden",
+                "description": "Whether or not the description is hidden.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "imageLinkHidden": {
+                "name": "imageLinkHidden",
+                "description": "Whether or not the image link is hidden.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "jcr:description": {
+                "name": "jcr:description",
+                "description": "The description.",
+                "requiredType": "String"
+            },
+            "jcr:title": {
+                "name": "jcr:title",
+                "description": "The title.",
+                "requiredType": "String"
+            },
+            "linkURL": {
+                "name": "linkURL",
+                "description": "The target page.",
+                "requiredType": "String",
+                "hint": "path",
+                "defaultValues": null
+            },
+            "pretitle": {
+                "name": "pretitle",
+                "description": "The pre-title text.",
+                "requiredType": "String"
+            },
+            "pretitleHidden": {
+                "name": "pretitleHidden",
+                "description": "Whether or not the pretitle is hidden.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "showTitleType": {
+                "name": "showTitleType",
+                "description": "Whether or not the title type is shown.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "titleFromPage": {
+                "name": "titleFromPage",
+                "description": "Whether or not the title value is taken from the linked page.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "titleHidden": {
+                "name": "titleHidden",
+                "description": "Whether or not the title is hidden.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "titleLinkHidden": {
+                "name": "titleLinkHidden",
+                "description": "Whether or not the title link is hidden.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "titleType": {
+                "name": "titleType",
+                "description": "The value for this title's HTML element type.",
+                "requiredType": "String"
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/teaser/v2/teaser",
+        "properties": {
+            "actionsEnabled": {
+                "name": "actionsEnabled",
+                "description": "Whether or not the teaser has Call-to-Action elements",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "descriptionFromPage": {
+                "name": "descriptionFromPage",
+                "description": "Whether or not the description value is taken from the linked page.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "descriptionHidden": {
+                "name": "descriptionHidden",
+                "description": "Whether or not the description is hidden.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "imageLinkHidden": {
+                "name": "imageLinkHidden",
+                "description": "Whether or not the image link is hidden.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "jcr:description": {
+                "name": "jcr:description",
+                "description": "The description.",
+                "requiredType": "String"
+            },
+            "jcr:title": {
+                "name": "jcr:title",
+                "description": "The title.",
+                "requiredType": "String"
+            },
+            "linkURL": {
+                "name": "linkURL",
+                "description": "The target page.",
+                "requiredType": "String",
+                "hint": "path",
+                "defaultValues": null
+            },
+            "pretitle": {
+                "name": "pretitle",
+                "description": "The pre-title text.",
+                "requiredType": "String"
+            },
+            "pretitleHidden": {
+                "name": "pretitleHidden",
+                "description": "Whether or not the pretitle is hidden.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "showTitleType": {
+                "name": "showTitleType",
+                "description": "Whether or not the title type is shown.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "titleFromPage": {
+                "name": "titleFromPage",
+                "description": "Whether or not the title value is taken from the linked page.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "titleHidden": {
+                "name": "titleHidden",
+                "description": "Whether or not the title is hidden.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "titleLinkHidden": {
+                "name": "titleLinkHidden",
+                "description": "Whether or not the title link is hidden.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "titleType": {
+                "name": "titleType",
+                "description": "The value for this title's HTML element type.",
+                "requiredType": "String"
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/text/v1/text",
+        "properties": {
+            "text": {
+                "name": "text",
+                "requiredType": "String"
+            },
+            "textIsRich": {
+                "name": "textIsRich",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/text/v2/text",
+        "properties": {
+            "text": {
+                "name": "text",
+                "requiredType": "String"
+            },
+            "textIsRich": {
+                "name": "textIsRich",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/title/v1/title",
+        "properties": {
+            "jcr:title": {
+                "name": "jcr:title",
+                "requiredType": "String"
+            },
+            "linkDisabled": {
+                "name": "linkDisabled",
+                "description": "Whether or not the title link is disabled.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "type": {
+                "name": "type",
+                "description": "Name of the configuration policy property that will store the default value for this title's HTML element type.",
+                "requiredType": "String",
+                "valueConstraints": [
+                    "h1",
+                    "h2",
+                    "h3",
+                    "h4",
+                    "h5",
+                    "h6"
+                ]
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/title/v2/title",
+        "properties": {
+            "jcr:title": {
+                "name": "jcr:title",
+                "requiredType": "String"
+            },
+            "linkDisabled": {
+                "name": "linkDisabled",
+                "description": "Whether or not the title link is disabled.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "type": {
+                "name": "type",
+                "description": "Name of the configuration policy property that will store the default value for this title's HTML element type.",
+                "requiredType": "String",
+                "valueConstraints": [
+                    "h1",
+                    "h2",
+                    "h3",
+                    "h4",
+                    "h5",
+                    "h6"
+                ]
+            }
+        }
+    },
+    {
+        "resourceType": "core/wcm/components/title/v3/title",
+        "properties": {
+            "jcr:title": {
+                "name": "jcr:title",
+                "requiredType": "String"
+            },
+            "linkDisabled": {
+                "name": "linkDisabled",
+                "description": "Whether or not the title link is disabled.",
+                "requiredType": "Boolean",
+                "defaultValues": false
+            },
+            "type": {
+                "name": "type",
+                "description": "Name of the configuration policy property that will store the default value for this title's HTML element type.",
+                "requiredType": "String",
+                "valueConstraints": [
+                    "h1",
+                    "h2",
+                    "h3",
+                    "h4",
+                    "h5",
+                    "h6"
+                ]
+            }
+        }
+    }
+]

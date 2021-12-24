@@ -1,0 +1,187 @@
+{
+    "com.adobe.cq.cdn.rewriter.impl.CDNConfigServiceImpl": {
+        "cdn.config.path.prefixes": "path"
+    },
+    "com.adobe.cq.commerce.impl.promotion.PromotionManagerImpl": {
+        "cq.commerce.promotion.root": "path"
+    },
+    "com.adobe.cq.dam.webdav.impl.io.AssetIOHandler": {
+        "pathPrefix": "path"
+    },
+    "com.adobe.cq.inbox.impl.typeprovider.ItemTypeProvider": {
+        "inbox.impl.typeprovider.registrypaths": "path",
+        "inbox.impl.typeprovider.legacypaths": "path",
+        "inbox.impl.typeprovider.defaulturl.failureitem": "url",
+        "inbox.impl.typeprovider.defaulturl.workitem": "url",
+        "inbox.impl.typeprovider.defaulturl.task": "url"
+    },
+    "com.adobe.cq.remote.content.renderer.impl.factory.ConfigurationFactoryImpl": {
+        "getContentPathPattern": "path"
+    },
+    "com.adobe.cq.scheduled.exporter.impl.ScheduledExporterImpl": {
+        "include.paths": "path"
+    },
+    "com.adobe.cq.screens.impl.handler.ChannelsUpdateHandler": {
+        "cq.pagesupdatehandler.imageresourcetypes": "resourceType",
+        "cq.pagesupdatehandler.productresourcetypes": "resourceType",
+        "cq.pagesupdatehandler.videoresourcetypes": "resourceType",
+        "cq.pagesupdatehandler.dynamicsequenceresourcetypes": "resourceType",
+        "cq.pagesupdatehandler.previewmodepaths": "path"
+    },
+    "com.adobe.cq.screens.monitoring.impl.ScreensMonitoringServiceImpl": {
+        "com.adobe.cq.screens.monitoring.impl.ScreensMonitoringServiceImpl.projectPath": "path"
+    },
+    "com.adobe.cq.screens.offlinecontent.impl.BulkOfflineUpdateServiceImpl": {
+        "com.adobe.cq.screens.offlinecontent.impl.BulkOfflineUpdateServiceImpl.projectPath": "path"
+    },
+    "com.adobe.cq.security.hc.dispatcher.impl.DispatcherAccessHealthCheck": {
+        "dispatcher.filter.allowed": "path",
+        "dispatcher.filter.blocked": "path"
+    },
+    "com.adobe.cq.social.connect.oauth.impl.FacebookProviderImpl": {
+        "provider.config.root": "path"
+    },
+    "com.adobe.cq.social.connect.oauth.impl.SocialOAuthAuthenticationHandler": {
+        "path": "path"
+    },
+    "com.adobe.cq.social.connect.oauth.impl.TwitterProviderImpl": {
+        "provider.config.root": "path"
+    },
+    "com.adobe.cq.social.messaging.client.endpoints.impl.MessagingOperationsServiceImpl": {
+        "failureTemplatePath": "path"
+    },
+    "com.adobe.cq.social.reporting.analytics.services.impl.SiteTrendReportSocialComponentFactory": {
+        "cq.social.console.analytics.sites.mapping": "path"
+    },
+    "com.adobe.cq.social.ugcbase.moderation.impl.SentimentProcess": {
+        "watchwords.path": "path",
+        "sentiment.path": "path"
+    },
+    "com.adobe.cq.social.user.impl.transport.HttpToPublisher": {
+        "agent.configuration": "path"
+    },
+    "com.adobe.granite.conf.impl.RuntimeAwareConfigurationResourceResolvingStrategy": {
+        "fallbackPaths": "path"
+    },
+    "com.adobe.granite.distribution.core.impl.diff.DiffChangesObserver": {
+        "diffPath": "path",
+        "observedPath": "path"
+    },
+    "com.adobe.granite.httpcache.impl.OuterCacheFilter": {
+        "com.adobe.granite.httpcache.url.paths": "path"
+    },
+    "com.adobe.granite.ui.clientlibs.impl.HtmlLibraryManagerImpl": {
+        "htmllibmanager.path.list": "path",
+        "htmllibmanager.excluded.path.list": "path"
+    },
+    "com.adobe.granite.workflow.core.payloadmap.PayloadMoveListener": {
+        "payload.move.white.list": "path"
+    },
+    "com.day.cq.analytics.impl.StorePropertiesChangeListener": {
+        "cq.store.listener.additionalStorePaths": "path"
+    },
+    "com.day.cq.auth.impl.LoginSelectorHandler": {
+        "auth.loginselector.defaultloginpage": "path",
+        "auth.loginselector.defaultchangepwpage": "path"
+    },
+    "com.day.cq.commons.servlets.RootMappingServlet": {
+        "rootmapping.target": "path"
+    },
+    "com.day.cq.dam.core.impl.DamChangeEventListener": {
+        "changeeventlistener.observed.paths": "path"
+    },
+    "com.day.cq.dam.core.impl.servlet.CompanionServlet": {
+        "/mnt/overlay/dam/gui/content/assets/moreinfo.html/${path}": "url"
+    },
+    "com.day.cq.dam.core.impl.servlet.HealthCheckServlet": {
+        "cq.dam.sync.workflow.id": "path",
+        "cq.dam.sync.folder.types": "nodeType"
+    },
+    "com.day.cq.dam.core.impl.servlet.ResourceCollectionServlet": {
+        "view.selector": "path"
+    },
+    "com.day.cq.polling.importer.impl.PollingImporterImpl": {
+        "exclude.paths": "path",
+        "include.paths": "path"
+    },
+    "com.day.cq.replication.impl.content.durbo.DurboImportConfigurationProviderService": {
+        "preserve.uuid.subtrees": "path"
+    },
+    "com.day.cq.reporting.impl.ConfigServiceImpl": {
+        "repconf.snapshots": "path",
+        "repconf.repdir": "path"
+    },
+    "com.day.cq.wcm.core.impl.commands.WCMCommandServlet": {
+        "wcmcommandservlet.delete_whitelist": "path"
+    },
+    "com.day.cq.wcm.core.impl.event.PagePostProcessor": {
+        "paths": "path"
+    },
+    "com.day.cq.wcm.core.impl.event.RepositoryChangeEventListener": {
+        "paths": "path",
+        "excludedPaths": "path"
+    },
+    "com.day.cq.wcm.core.impl.LanguageManagerImpl": {
+        "langmgr.list.path": "path"
+    },
+    "com.day.cq.wcm.core.impl.VersionManagerImpl": {
+        "versionmanager.purgePaths": "path",
+        "versionmanager.ivPaths": "path"
+    },
+    "com.day.cq.wcm.core.impl.VersionPurgeTask": {
+        "versionpurge.paths": "path"
+    },
+    "com.day.cq.wcm.foundation.forms.impl.MailServlet": {
+        "resource.whitelist": "path",
+        "resource.blacklist": "path"
+    },
+    "com.day.cq.wcm.foundation.impl.HTTPAuthHandler": {
+        "auth.default.loginpage": "url"
+    },
+    "com.day.cq.wcm.mobile.core.impl.redirect.RedirectFilter": {
+        "redirect.paths": "path"
+    },
+    "com.day.cq.wcm.msm.impl.LiveRelationshipManagerImpl": {
+        "liverelationshipmgr.relationsconfig.default": "path"
+    },
+    "com.day.cq.wcm.workflow.impl.WcmWorkflowServiceImpl": {
+        "cq.wcm.worklfow.terminate.exclusion.list": "path"
+    },
+    "com.day.cq.wcm.workflow.impl.WorkflowPackageInfoProvider": {
+        "workflowpackageinfoprovider.filter": "path",
+        "workflowpackageinfoprovider.filter.rootpath": "path"
+    },
+    "com.day.crx.security.token.impl.impl.TokenAuthenticationHandler": {
+        "skip.token.refresh": "url"
+    },
+    "org.apache.jackrabbit.vault.packaging.impl.PackagingImpl": {
+        "packageRoots": "path"
+    },
+    "org.apache.sling.caconfig.resource.impl.def.DefaultConfigurationResourceResolvingStrategy": {
+        "configPath": "path",
+        "fallbackPaths": "path"
+    },
+    "org.apache.sling.engine.impl.auth.SlingAuthenticator": {
+        "sling.auth.requirements": "path"
+    },
+    "org.apache.sling.jcr.resource.internal.JcrResourceResolverFactoryImpl": {
+        "resource.resolver.searchpath": "path",
+        "resource.resolver.map.location": "path",
+        "resource.resolver.allowed.alias.locations": "path",
+        "resource.resolver.vanitypath.whitelist": "path",
+        "resource.resolver.vanitypath.blacklist": "path"
+    },
+    "org.apache.sling.resourcemerger.impl.MergedResourceProviderFactory": {
+        "merge.root": "path"
+    },
+    "org.apache.sling.resourcemerger.picker.overriding": {
+        "merge.root": "path"
+    },
+    "org.apache.sling.security.impl.ContentDispositionFilter": {
+        "sling.content.disposition.excluded.paths": "path"
+    },
+    "org.apache.sling.tenant.internal.TenantProviderImpl": {
+        "tenant.root": "path",
+        "tenant.path.matcher": "path"
+    }
+}

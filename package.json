@@ -1,0 +1,487 @@
+{
+    "name": "aemexplorer",
+    "displayName": "AEM Explorer",
+    "description": "",
+    "icon": "assets/icons/extension.png",
+    "version": "1.0.0",
+    "publisher": "misonou",
+    "license": "MIT",
+    "preview": true,
+    "keywords": [
+        "aem",
+        "adobe experience manager"
+    ],
+    "categories": [
+        "Other"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/misonou/vscode-aemexplorer.git"
+    },
+    "engines": {
+        "vscode": "^1.60.0"
+    },
+    "main": "./out/src/extension.js",
+    "scripts": {
+        "vscode:prepublish": "npm run compile -- --minify",
+        "compile": "esbuild ./src/extension.ts --bundle --outfile=out/src/extension.js --external:vscode --format=cjs --platform=node",
+        "watch": "tsc -watch -p ./",
+        "pretest": "npm run compile && npm run lint",
+        "lint": "eslint src --ext ts",
+        "test": "node ./out/test/runTest.js"
+    },
+    "devDependencies": {
+        "@types/archiver": "^5.1.1",
+        "@types/glob": "^7.1.4",
+        "@types/mime-types": "^2.1.1",
+        "@types/mocha": "^9.0.0",
+        "@types/node": "14.x",
+        "@types/unzipper": "^0.10.4",
+        "@types/uuid": "^8.3.1",
+        "@types/vscode": "^1.60.0",
+        "@typescript-eslint/eslint-plugin": "^4.31.1",
+        "@typescript-eslint/parser": "^4.31.1",
+        "@vscode/test-electron": "^1.6.2",
+        "esbuild": "^0.13.7",
+        "eslint": "^7.32.0",
+        "glob": "^7.2.0",
+        "mocha": "^9.1.1",
+        "typescript": "^4.4.3"
+    },
+    "dependencies": {
+        "aem-querybuilder": "^1.0.2",
+        "archiver": "^5.3.0",
+        "fast-xml-parser": "^3.20.3",
+        "form-data": "^4.0.0",
+        "html-entities": "^2.3.2",
+        "mime-types": "^2.1.32",
+        "promise-any-polyfill": "^1.0.1",
+        "puppeteer": "^11.0.0",
+        "unzipper": "^0.10.11",
+        "uuid": "^8.3.2"
+    },
+    "activationEvents": [
+        "onView:aemexplorer.treeView",
+        "workspaceContains:**/jcr_root/**"
+    ],
+    "contributes": {
+        "viewsContainers": {
+            "activitybar": [
+                {
+                    "id": "aemexplorer",
+                    "title": "AEM Explorer",
+                    "icon": "assets/icons/activitybar.png"
+                }
+            ]
+        },
+        "views": {
+            "aemexplorer": [
+                {
+                    "id": "aemexplorer.treeView",
+                    "name": "AEM Explorer"
+                }
+            ]
+        },
+        "menus": {
+            "view/title": [
+                {
+                    "command": "aemexplorer.treeView.refreshTreeView",
+                    "when": "view == aemexplorer.treeView",
+                    "group": "navigation"
+                },
+                {
+                    "command": "aemexplorer.treeView.toggleContextualView",
+                    "when": "view == aemexplorer.treeView",
+                    "group": "other"
+                }
+            ],
+            "view/item/context": [
+                {
+                    "command": "aemexplorer.treeView.refreshTreeView",
+                    "when": "view == aemexplorer.treeView",
+                    "group": "1_create@9"
+                },
+                {
+                    "command": "aemexplorer.treeView.openFile",
+                    "when": "view == aemexplorer.treeView && viewItem =~ /(^|\\s)(file|osgiconfig)(\\s|$)/",
+                    "group": "2_open@1"
+                },
+                {
+                    "command": "aemexplorer.treeView.openInBrowser",
+                    "when": "view == aemexplorer.treeView && viewItem =~ /(^|\\s)(page|site|contextualType:site)(\\s|$)/",
+                    "group": "2_open@2"
+                },
+                {
+                    "command": "aemexplorer.treeView.editInBrowser",
+                    "when": "view == aemexplorer.treeView && viewItem =~ /(^|\\s)(page|site)(\\s|$)/",
+                    "group": "2_open@3"
+                },
+                {
+                    "command": "aemexplorer.treeView.revealInBrowser",
+                    "when": "view == aemexplorer.treeView && viewItem =~ /(^|\\s)revealInBrowser:true(\\s|$)/",
+                    "group": "2_open@5"
+                },
+                {
+                    "command": "aemexplorer.treeView.downloadFile",
+                    "when": "view == aemexplorer.treeView && viewItem =~ /(^|\\s)(file|osgiconfig)(\\s|$)/",
+                    "group": "2_open@9"
+                },
+                {
+                    "command": "aemexplorer.treeView.copyPath",
+                    "when": "view == aemexplorer.treeView && viewItem =~ /^(?!contextual)/",
+                    "group": "3_copy@1"
+                },
+                {
+                    "command": "aemexplorer.treeView.copyURL",
+                    "when": "view == aemexplorer.treeView && viewItem =~ /^(?!contextual)/",
+                    "group": "3_copy@1"
+                },
+                {
+                    "command": "aemexplorer.treeView.copyAuthorizableID",
+                    "when": "view == aemexplorer.treeView && viewItem =~ /(^|\\s)(user|group)(\\s|$)/",
+                    "group": "3_copy@2"
+                },
+                {
+                    "command": "aemexplorer.treeView.copyTagID",
+                    "when": "view == aemexplorer.treeView && viewItem =~ /(^|\\s)tag(\\s|$)/",
+                    "group": "3_copy@2"
+                },
+                {
+                    "command": "aemexplorer.treeView.openLocalFile",
+                    "when": "view == aemexplorer.treeView && viewItem =~ /(^|\\s)local:true(\\s|$)/",
+                    "group": "3_local@4"
+                },
+                {
+                    "command": "aemexplorer.treeView.diffLocalFile",
+                    "when": "view == aemexplorer.treeView && viewItem =~ /(^|\\s)(file|osgiconfig)(\\s|$)/ && viewItem =~ /(^|\\s)local:true(\\s|$)/",
+                    "group": "3_local@5"
+                },
+                {
+                    "command": "aemexplorer.treeView.revealInExplorer",
+                    "when": "view == aemexplorer.treeView && viewItem =~ /(^|\\s)local:true(\\s|$)/",
+                    "group": "3_local@6"
+                },
+                {
+                    "command": "aemexplorer.treeView.exportContent",
+                    "when": "view == aemexplorer.treeView && viewItem =~ /(^|\\s)path:/\\S+(\\s|$)/",
+                    "group": "3_local@7"
+                },
+                {
+                    "command": "aemexplorer.treeView.uploadFile",
+                    "when": "view == aemexplorer.treeView && viewItem =~ /(^|\\s)path:/content/dam/\\S+(\\s|$)/",
+                    "group": "4_modify@5"
+                },
+                {
+                    "command": "aemexplorer.treeView.editCugPolicy",
+                    "when": "view == aemexplorer.treeView && viewItem =~ /(^|\\s)(page|path:/content/dam/\\S+)(\\s|$)/",
+                    "group": "4_modify@6"
+                },
+                {
+                    "command": "aemexplorer.treeView.publish",
+                    "when": "view == aemexplorer.treeView && viewItem =~ /(^|\\s)path:/\\S+(\\s|$)/",
+                    "group": "4_modify@7"
+                },
+                {
+                    "command": "aemexplorer.treeView.publishSubtree",
+                    "when": "view == aemexplorer.treeView && viewItem =~ /(^|\\s)path:/\\S+(\\s|$)/",
+                    "group": "4_modify@7"
+                },
+                {
+                    "command": "aemexplorer.treeView.renameContent",
+                    "when": "view == aemexplorer.treeView && viewItem =~ /^(?!contextual|root)/",
+                    "group": "4_tree@8"
+                },
+                {
+                    "command": "aemexplorer.treeView.deleteContent",
+                    "when": "view == aemexplorer.treeView && viewItem =~ /(^|\\s)path:/\\S+(\\s|$)/",
+                    "group": "4_tree@9"
+                },
+                {
+                    "command": "aemexplorer.treeView.viewProperties",
+                    "when": "view == aemexplorer.treeView && viewItem =~ /^(?!contextual)|(^|\\s)contextualType:(model|modelField)(\\s|$)/",
+                    "group": "5_view@1"
+                },
+                {
+                    "command": "aemexplorer.treeView.viewPageProperties",
+                    "when": "view == aemexplorer.treeView && viewItem =~ /(^|\\s)(page|site)(\\s|$)/",
+                    "group": "5_view@2"
+                },
+                {
+                    "command": "aemexplorer.treeView.viewContentXML",
+                    "when": "view == aemexplorer.treeView && viewItem =~ /(^|\\s)(dialog|hasJcrContent:true)(\\s|$)/",
+                    "group": "5_view@3"
+                },
+                {
+                    "command": "aemexplorer.treeView.installPackage",
+                    "when": "view == aemexplorer.treeView && viewItem =~ /(^|\\s)contextualType:packages(\\s|$)/",
+                    "group": "1_create@3"
+                },
+                {
+                    "command": "aemexplorer.treeView.downloadPackage",
+                    "when": "view == aemexplorer.treeView && viewItem =~ /(^|\\s)package(\\s|$)/",
+                    "group": "2_open@9"
+                },
+                {
+                    "command": "aemexplorer.treeView.tailLog",
+                    "when": "view == aemexplorer.treeView && viewItem =~ /(^|\\s)contextualType:logStream(\\s|$)/"
+                },
+                {
+                    "command": "aemexplorer.treeView.openLogStream",
+                    "when": "view == aemexplorer.treeView && viewItem =~ /(^|\\s)contextualType:logStream(\\s|$)/"
+                },
+                {
+                    "command": "aemexplorer.treeView.closeLogStream",
+                    "when": "view == aemexplorer.treeView && viewItem =~ /(^|\\s)contextualType:logStream(\\s|$)/ && viewItem =~ /(^|\\s)active:true(\\s|$)/",
+                    "group": "inline"
+                },
+                {
+                    "command": "aemexplorer.treeView.createFolder",
+                    "when": "view == aemexplorer.treeView && viewItem =~ /(^|\\s)(folder|contextualType:assets)(\\s|$)/",
+                    "group": "1_create@3"
+                },
+                {
+                    "command": "aemexplorer.treeView.createPage",
+                    "when": "view == aemexplorer.treeView && viewItem =~ /(^|\\s)(site|page)(\\s|$)/",
+                    "group": "1_create@3"
+                },
+                {
+                    "command": "aemexplorer.treeView.createTag",
+                    "when": "view == aemexplorer.treeView && viewItem =~ /(^|\\s)(tag|contextualType:tags)(\\s|$)/",
+                    "group": "1_create@3"
+                },
+                {
+                    "command": "aemexplorer.treeView.createUser",
+                    "when": "view == aemexplorer.treeView && viewItem =~ /(^|\\s)contextualType:(users|security)(\\s|$)/",
+                    "group": "1_create@3"
+                },
+                {
+                    "command": "aemexplorer.treeView.editMembership",
+                    "when": "view == aemexplorer.treeView && viewItem =~ /(^|\\s)(user|group)(\\s|$)/",
+                    "group": "4_modify@3"
+                },
+                {
+                    "command": "aemexplorer.treeView.createGroup",
+                    "when": "view == aemexplorer.treeView && viewItem =~ /(^|\\s)contextualType:(groups|security)(\\s|$)/",
+                    "group": "1_create@3"
+                },
+                {
+                    "command": "aemexplorer.treeView.editGroupName",
+                    "when": "view == aemexplorer.treeView && viewItem =~ /(^|\\s)group(\\s|$)/",
+                    "group": "4_modify@3"
+                },
+                {
+                    "command": "aemexplorer.treeView.editGroupMember",
+                    "when": "view == aemexplorer.treeView && viewItem =~ /(^|\\s)group(\\s|$)/",
+                    "group": "4_modify@3"
+                },
+                {
+                    "command": "aemexplorer.treeView.createConfig",
+                    "when": "view == aemexplorer.treeView && viewItem =~ /(^|\\s)contextualType:configGroup(\\s|$)/",
+                    "group": "1_create@3"
+                },
+                {
+                    "command": "aemexplorer.treeView.showHiddenNodes",
+                    "when": "view == aemexplorer.treeView && viewItem =~ /(^|\\s)hasJcrContent:true(\\s|$)/ && viewItem =~ /(^|\\s)showHiddenNodes:false(\\s|$)/",
+                    "group": "inline"
+                }
+            ]
+        },
+        "commands": [
+            {
+                "command": "aemexplorer.treeView.copyPath",
+                "title": "Copy Path"
+            },
+            {
+                "command": "aemexplorer.treeView.copyURL",
+                "title": "Copy URL"
+            },
+            {
+                "command": "aemexplorer.treeView.copyTagID",
+                "title": "Copy Tag ID"
+            },
+            {
+                "command": "aemexplorer.treeView.copyAuthorizableID",
+                "title": "Copy Authorizable ID"
+            },
+            {
+                "command": "aemexplorer.treeView.viewProperties",
+                "title": "View Properties"
+            },
+            {
+                "command": "aemexplorer.treeView.viewPageProperties",
+                "title": "View Page Properties"
+            },
+            {
+                "command": "aemexplorer.treeView.viewContentXML",
+                "title": "View Content XML"
+            },
+            {
+                "command": "aemexplorer.treeView.showHiddenNodes",
+                "title": "Show Hidden Nodes",
+                "icon": "$(unfold)"
+            },
+            {
+                "command": "aemexplorer.treeView.openFile",
+                "title": "Open File"
+            },
+            {
+                "command": "aemexplorer.treeView.openInBrowser",
+                "title": "Open in Browser"
+            },
+            {
+                "command": "aemexplorer.treeView.editInBrowser",
+                "title": "Open in Browser (Edit Mode)"
+            },
+            {
+                "command": "aemexplorer.treeView.revealInBrowser",
+                "title": "Reveal in Adobe Experience Manager"
+            },
+            {
+                "command": "aemexplorer.treeView.downloadFile",
+                "title": "Download File..."
+            },
+            {
+                "command": "aemexplorer.treeView.openLocalFile",
+                "title": "Open Local Copy"
+            },
+            {
+                "command": "aemexplorer.treeView.diffLocalFile",
+                "title": "Compare with Local Copy"
+            },
+            {
+                "command": "aemexplorer.treeView.revealInExplorer",
+                "title": "Reveal Local Copy in Side Bar"
+            },
+            {
+                "command": "aemexplorer.treeView.renameContent",
+                "title": "Rename..."
+            },
+            {
+                "command": "aemexplorer.treeView.deleteContent",
+                "title": "Delete"
+            },
+            {
+                "command": "aemexplorer.treeView.exportContent",
+                "title": "Export to Local..."
+            },
+            {
+                "command": "aemexplorer.treeView.uploadFile",
+                "title": "Upload Files..."
+            },
+            {
+                "command": "aemexplorer.treeView.editCugPolicy",
+                "title": "Edit Closed User Groups..."
+            },
+            {
+                "command": "aemexplorer.treeView.downloadPackage",
+                "title": "Download Package..."
+            },
+            {
+                "command": "aemexplorer.treeView.installPackage",
+                "title": "Install Package..."
+            },
+            {
+                "command": "aemexplorer.treeView.tailLog",
+                "title": "View Last 1000 Lines"
+            },
+            {
+                "command": "aemexplorer.treeView.openLogStream",
+                "title": "Watch Log"
+            },
+            {
+                "command": "aemexplorer.treeView.closeLogStream",
+                "title": "Stop",
+                "icon": "$(stop-circle)"
+            },
+            {
+                "command": "aemexplorer.treeView.createFolder",
+                "title": "New Folder..."
+            },
+            {
+                "command": "aemexplorer.treeView.createPage",
+                "title": "New Page..."
+            },
+            {
+                "command": "aemexplorer.treeView.createTag",
+                "title": "New Tag..."
+            },
+            {
+                "command": "aemexplorer.treeView.createUser",
+                "title": "New User..."
+            },
+            {
+                "command": "aemexplorer.treeView.editMembership",
+                "title": "Edit Membership..."
+            },
+            {
+                "command": "aemexplorer.treeView.createGroup",
+                "title": "New Group..."
+            },
+            {
+                "command": "aemexplorer.treeView.editGroupName",
+                "title": "Edit Display Name..."
+            },
+            {
+                "command": "aemexplorer.treeView.editGroupMember",
+                "title": "Edit Group Members..."
+            },
+            {
+                "command": "aemexplorer.treeView.createConfig",
+                "title": "New OSGi Config..."
+            },
+            {
+                "command": "aemexplorer.treeView.publish",
+                "title": "Publish"
+            },
+            {
+                "command": "aemexplorer.treeView.publishSubtree",
+                "title": "Publish Subtree..."
+            },
+            {
+                "command": "aemexplorer.treeView.refreshTreeView",
+                "title": "Refresh",
+                "icon": "$(refresh)"
+            },
+            {
+                "command": "aemexplorer.treeView.toggleContextualView",
+                "title": "Toggle Contextual View"
+            }
+        ],
+        "configuration": {
+            "title": "AEM Explorer",
+            "properties": {
+                "aemexplorer.hosts": {
+                    "description": "List of URLs of Adobe Experience Manager instances.",
+                    "default": [
+                        "http://localhost:4502"
+                    ],
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "aemexplorer.httpProxy": {
+                    "markdownDescription": "HTTP proxy for connecting AEM instances, specifies host names (wildcard supported) for keys and proxy URL for values, e.g. `*.example.com` and `http://127.0.0.1:8080`.",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string",
+                        "format": "uri"
+                    }
+                },
+                "aemexplorer.syncPaths": {
+                    "description": "Glob patterns relative to workspace which matched files are synchronized to AEM server.",
+                    "default": [],
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "aemexplorer.deleteRemoteFiles": {
+                    "description": "Whether to delete files on server when synchronizing betweeen local and AEM server.",
+                    "default": false,
+                    "type": "boolean"
+                }
+            }
+        }
+    }
+}
